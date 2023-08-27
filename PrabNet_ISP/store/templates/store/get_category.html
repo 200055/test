@@ -1,0 +1,48 @@
+{% extends 'layout-admin.html' %}
+{% block title %}
+<title>All Categories</title>
+{% endblock%}
+
+{% block main_content %}
+
+<div class="container pt-5">
+    <div class="row bg-light">
+
+        <div class="col offset-md-1">
+            {% include 'messages.html' %}
+            <a class="btn custom-button1 btn-lg ms-auto my-2"
+                href="/store/category_form"
+                >Add New Category</a>
+            <div class="card py-2 px-2">
+
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </tr>
+                        </thead>
+                    {% for i in categories %}
+                    <tr>
+                        <td> {{ i.category_name }}</td>
+                        <td> {{ i.category_description }}</td>
+                        <td> {{ i.created_date }}</td>
+                        <td><img src="/{{i.category_image}}" width="200"> </td>
+                        <td><a class="btn btn-primary btn-sm" href="/store/update_category/{{i.id}}">Edit</a> &nbsp;
+                            <a class="btn btn-danger btn-sm"
+                               href="/store/delete_category/{{i.id}}"
+                               onclick="return confirm('Are you sure want to delete this category?')" >Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

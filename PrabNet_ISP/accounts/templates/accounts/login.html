@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% load widget_tweaks%}
+
+{% block title %}
+    <title>Login</title>
+{% endblock%}
+
+{% block main_content %}
+<style>
+
+input{
+    color:#ff914 !important;
+    background-color: black;
+}
+.card{
+        background-color: #29222217;
+        transition: 0.5s;
+        box-shadow: 0px 0px 21px -7px #283b76;
+}
+
+.card:hover{
+        box-shadow:0px 0px 24px 1px #283b76;
+}
+.control-label{
+    font-size:1.5rem;
+    width:100%;
+    color: #909090;
+}
+
+.form-control{
+    background-color: black !important;
+    margin:auto;
+    color: white !important;
+
+}
+.border-white{
+    border: 1px solid white !important;
+    width: 83%;
+}
+.col-sm-10.col-lg-10 {
+     margin:auto;
+}
+
+</style>
+
+<div class="container my-5">
+<div class="row">
+
+    <div class="col-md-6 offset-md-3 ">
+        <h1 class="text-center text-light my-5">Customer Login</h1>
+          {% include 'messages.html'%}
+        <div class="card py-2 px-2 site-color text-center ">
+        <form class="form myForm mb-2" action="" method="POST">
+            {% csrf_token %}
+            {{ form_login | bootstrap_horizontal }}
+            <a href="/reset_password" class="text-decoration-none ">Forgot Password?</a>
+            <button type="submit" class="btn custom-button2 mt-3 text-light border-white">Submit</button>
+            <a href="/register" class="mt-3 btn custom-button2 text-light border-white"><i class="bi bi-user"></i>
+                            Register</a>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter username"
+    form_fields[2].placeholder = "Enter password"
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+{% endblock %}

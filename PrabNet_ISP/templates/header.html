@@ -1,0 +1,62 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top mb-5">
+    <div class="container d-flex flex-row bd-highlight">
+      <div class="nav-left ">
+        <a class="navbar-brand" href="/">
+          <img id="nav-logo" src="{% static 'images/logo.svg' %}" alt="logo" class="img-fluid">
+        </a>
+      </div>
+      <div class="nav-right">
+        <button type="button" class="navbar-toggler" data-bs-toggle="modal" data-bs-target="#nav-modal">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+
+             {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a href="/users/profile" class="nav-link underline--magical"><i class="bi bi-man"></i>
+                            Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admins/get_internet_outage_user" class="nav-link underline--magical"><i class="bi bi-man"></i>
+                            Outage-Notice</a>
+                    </li>
+                <li class="nav-item">
+                  <a class="nav-link underline--magical" href="/store/menu">Store</a>
+                </li>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link underline--magical" href="/store/mycart">My Cart</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link underline--magical" href="/store/my_order">My Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link  underline--magical"><i class="bi bi-user"></i>
+                            Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                      <a href="/" class="nav-link  underline--magical">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="/services" class="nav-link underline--magical ">Our Services</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="/contact" class="nav-link  underline--magical">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="/about" class="nav-link  underline--magical">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="/login" class="nav-link  underline--magical">Customer Login</a>
+                    </li>
+                    {% endif %}
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>

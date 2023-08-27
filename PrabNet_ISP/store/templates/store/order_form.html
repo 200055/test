@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% block title %}
+    <title>Order Item</title>
+{% endblock%}
+
+{% block main_content %}
+<style>
+.form-control{
+    background-color: black !important;
+    margin:auto;
+    color: white !important;
+    border: 1px solid black;
+
+
+}
+.form-control:hover{
+    border: 1px solid #283b76;
+}
+.form-control:focus{
+    border: 1px solid #0d6efd;
+    box-shadow: none !important;
+}
+.form-group{
+   display:flex !important;
+   flex-direction:column;
+   align-items:center;
+}
+label{
+    width:20% !important;
+    text-align: center!important;
+}
+</style>
+
+<div class="container pt-5">
+<div class="row">
+
+    <div class="col-md-6 offset-md-3">
+          {% include 'messages.html'%}
+        <div class="card card-custom text-card py-2 px-2">
+        <h1 class="text-center">Order Item</h1>
+        <form class="form text-card" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ order_form | bootstrap_horizontal }}
+            <div class="text-center">
+            <button type="submit" class="btn custom-button2 custom-button2-border-light mt-3">Proceed to Payment</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter quantity"
+    form_fields[2].placeholder = "Enter contact no"
+       form_fields[3].placeholder = "Enter contact address"
+
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+{% endblock %}

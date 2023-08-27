@@ -1,0 +1,56 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% block title %}
+<title>News Plan</title>
+{% endblock%}
+
+{% block main_content %}
+<style>
+    .table-width{
+        width:20px;
+    }
+    .tbody, td, tfoot, th, thead, tr {;
+        border-width: 0.1px;
+    }
+    .action1{
+        width:500px;
+    }
+</style>
+<div class="container py-5 my-5">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+                {% include 'messages.html' %}
+                <div class="py-2 mx-5 lead">
+
+                    <a class="btn custom-button1 btn-sm ms-auto"
+                    href="/internet/category_form">Add New Plan</a>
+                </div>
+            <div class="card mx-5">
+                <table class="table table-striped">
+                    <thead>
+                    <tr  class="table-width">
+                        <th>Plan</th>
+                        <th class="action1">Actions</th>
+                    </tr>
+                    </thead>
+                    {% for i in categories %}
+                    <tr>
+                        <td> {{ i.plan_name }}</td>
+<!--                         <td> <img src="{{i.image_url}}" alt="image" width="100"></td>-->
+                        <td><a class="btn btn-primary btn-sm ms-1 my-2 px-3" href="/internet/update_category/{{i.id}}">Edit</a> &nbsp;
+                            <a class="btn btn-danger btn-sm"
+                               href="/internet/delete_category/{{i.id}}"
+                               onclick="return confirm('Are you sure want to delete this plan?')" >Delete</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

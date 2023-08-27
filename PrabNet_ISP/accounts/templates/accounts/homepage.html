@@ -1,0 +1,150 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<title>PrabNet - Home</title>
+{% endblock title %}
+
+{% block main_content %}
+<section id="home" class="landing-home d-flex mt-5">
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="{% static 'videos/test.mp4' %}" type="video/mp4">
+    </video>
+    <div
+      class="container d-flex justify-content-center justify-content-lg-between align-items-center flex-lg-row flex-column text-center text-lg-start">
+      <div class="text-secondary pb-5 ">
+        <h5 class="display-3 fw-bold six99 animate__animated animate__pulse">699 MBPS</h5>
+        <h5 class="fs-1 fw-bold">2 Month Free!</h5>
+
+
+      </div>
+      <div class="after-price ">
+        <div class="gradient-custom fs-1 fw-bold animate__animated animate__pulse">Rs.999 </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SPEED SECTION  -->
+<section id="speed">
+    <div class="container-fluid pt-5 pb-5 text-light">
+      <div class="speed-title text-center text-white pb-2 animate__animated animate__fadeInUp">
+        <h4>Try Our Extreme Fast Internet - Faster Than Nasa Pack</h4>
+        <h5>It's fastest you will ever surf the interet.</h5>
+      </div>
+
+      <div class="g-4 owl-carousel owl-theme mt-2">
+        <div class="col">
+          <div class="card h-100 mb-3 card-rounded speed-card">
+            <div class="speed-img mt-3">
+              <div class="text-center fs-6 prabnet-color ">PRABNET</div>
+              <div class="text-center fs-1 fw-bolder ">10 GIG</div>
+            </div>
+            <div class="card-body text-center ">
+              <h5 class="card-title">Upto 9500 Mpbs</h5>
+              <p class="card-text">Work from home is a no problem, with this pack your promotion is fixed.</p>
+              <a href="/services" class="mx-auto custom-button1">Order Now</a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 mb-3 card-rounded speed-card">
+            <div class="speed-img mt-3">
+              <div class="text-center fs-6 prabnet-color ">PRABNET</div>
+              <div class="text-center fs-1 fw-bolder ">10 GIG</div>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Upto 9500 Mpbs</h5>
+              <p class="card-text">Work from home is a no problem, with this pack your promotion is fixed.</p>
+              <a href="/services" class="mx-auto custom-button1">Order Now</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 mb-3 card-rounded speed-card">
+            <div class="speed-img mt-3">
+              <div class="text-center fs-6 prabnet-color ">PRABNET</div>
+              <div class="text-center fs-1 fw-bolder ">10 GIG</div>
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Upto 9500 Mpbs</h5>
+              <p class="card-text">Work from home is a no problem, with this pack your promotion is fixed.</p>
+              <a href="/services" class="mx-auto custom-button1">Order Now</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <!-- AD VIDEO SECTION  -->
+  <section class="m-0">
+    <video class="hidden-xs hidden-sm hidden-md hidden-custom videosize embed-responsive-item"
+           playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+      <source src="{% static 'videos/service-home.mp4' %}" type="video/mp4" />
+    </video>
+  </section>
+
+  <!-- OFFERS SECTION  -->
+  <section id="offers">
+    <div class="container p-5">
+      <h4 class="text-center text-light pb-4 ">Introductory Offers</h4>
+      <div class="d-flex flex-column flex-md-row">
+        <div class="card mb-3 text-center offer-card card-rounded shadow-lg border-none">
+          <div class="offer-card-title pt-3 pb-3">
+            <div class="h5">NPR <span class="h3">999</span></div>
+          </div>
+          <div class="card-body p-0">
+            <h5 class="card-title border-top py-3">1 month</h5>
+            <h5 class="card-title border-top border-bottom py-3">699 Mbps</h5>
+            <div class="mt-4 mb-3 pb-3 ">
+              <a href="/services" class="custom-button2 btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 text-center offer-card card-rounded shadow-lg">
+          <div class="offer-card-title pt-3 pb-3 ">
+            <div class="h5">NPR <span class="h3">999</span></div>
+          </div>
+          <div class="card-body p-0">
+            <h5 class="card-title border-top py-3">1 month</h5>
+            <h5 class="card-title border-top border-bottom py-3">699 Mbps</h5>
+            <div class="mt-4 mb-3 pb-3 ">
+              <a href="/services" class="custom-button2 btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 text-center offer-card card-rounded shadow-lg">
+          <div class="offer-card-title pt-3 pb-3 ">
+            <div class="h5">NPR <span class="h3">999</span></div>
+          </div>
+          <div class="card-body p-0">
+            <h5 class="card-title border-top py-3">1 month</h5>
+            <h5 class="card-title border-top border-bottom py-3">699 Mbps</h5>
+            <div class="mt-4 mb-3 pb-3 ">
+              <a href="/services" class="custom-button2 btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3 text-center offer-card card-rounded shadow-lg">
+          <div class="offer-card-title pt-3 pb-3 ">
+            <div class="h5">NPR <span class="h3">999</span></div>
+          </div>
+          <div class="card-body p-0">
+            <h5 class="card-title border-top py-3">1 month</h5>
+            <h5 class="card-title border-top border-bottom py-3">699 Mbps</h5>
+            <div class="mt-4 mb-3 pb-3 ">
+              <a href="/services" class="custom-button2 btn">Order Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock main_content %}

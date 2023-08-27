@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+<title>My Cart </title>
+{% endblock%}
+
+{% block main_content %}
+<section class="top-banner d-flex mt-5 top-banner-img">
+     <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="{% static 'videos/top-banner.mp4' %}" type="video/mp4">
+        </video>
+    <div class="container d-flex justify-content-center align-items-center flex-column text-light">
+       <h4 class="fw-normal">Cart</h4>
+        <div class=" text-center ">
+            <p class="a_tag text-light">
+                <a href="/users/profile" class="text-danger text-decoration-none">Home</a> / Cart
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container pt-5">
+    <div class="row">
+
+        <div class="col-md-10 offset-md-1">
+            {% include 'messages.html' %}
+            <div class="card card-custom shadow-lg py-2 px-2">
+                <table class="table text-card table-striped">
+                    <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Date Added</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    {% for i in items %}
+                    <tr class="text-card">
+                        <td> {{ i.product.product_name }}</td>
+                        <td> {{ i.product.product_price }}</td>
+                        <td> {{ i.created_date }}</td>
+                        <td><a class="btn test-button-remove btn-sm" href="/store/remove_cart_item/{{i.id}}">Remove</a> &nbsp;
+                            <a class="btn test-button btn-sm"
+                               href="/store/order_form/{{i.product.id}}/{{i.id}}"
+                               onclick="return confirm('Are you sure want to order this product?')" >Order</a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

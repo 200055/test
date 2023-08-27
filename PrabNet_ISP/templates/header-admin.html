@@ -1,0 +1,44 @@
+{% load static %}
+<nav class="navbar navbar-expand-md navbar-dark bg-black fixed-top mb-5">
+    <div class="container d-flex flex-row bd-highlight">
+      <div class="nav-left ">
+        <a class="navbar-brand" href="/admins/admin_dashboard">
+          <img id="nav-logo" src="{% static 'images/logo.svg' %}" alt="logo" class="img-fluid">
+        </a>
+      </div>
+      <div class="nav-right">
+        <button type="button" class="navbar-toggler" data-bs-toggle="modal" data-bs-target="#nav-modal">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="/internet/get_category" class="nav-link  underline--magical"><i class="bi bi-man"></i>Plan-Categories</a>
+                </li>
+              <li class="nav-item">
+                    <a href="/admins/plan_request" class="nav-link  underline--magical"><i class="bi bi-man"></i>Plan-Requests</a>
+                </li>
+              <li class="nav-item">
+                    <a href="/admins/get_internet_outage" class="nav-link  underline--magical"><i class="bi bi-man"></i>Outage-Notice</a>
+                </li>
+              <li class="nav-item"><a class="nav-link  underline--magical" aria-current="page" href="/store/get_category">Product-Category</a></li>
+                <li class="nav-item"><a class="nav-link  underline--magical" href="/store/get_product">Products</a>
+                </li>
+                <li class="nav-item"><a class="nav-link  underline--magical" href="/admins/feedback">Message</a>
+                </li>
+
+
+
+
+
+
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link  underline--magical"><i class="bi bi-user"></i>
+                        Logout</a>
+                </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>

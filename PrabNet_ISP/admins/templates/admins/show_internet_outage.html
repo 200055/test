@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<title>Outage Notice</title>
+{% endblock title %}
+
+{% block main_content %}
+<style>
+
+    a{
+    text-decoration:none;
+    color: red;
+    }
+</style>
+
+<section class="top-banner d-flex mt-5 top-banner-img">
+     <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="{% static 'videos/top-banner.mp4' %}" type="video/mp4">
+        </video>
+    <div class="container d-flex justify-content-center align-items-center flex-column text-light">
+       <h4 class="fw-normal">Internet Outage</h4>
+        <div class=" text-center ">
+            <p class="a_tag text-light">
+                <a href="/users/profile" class="text-danger text-decoration-none">Home</a> / Category
+            </p>
+        </div>
+    </div>
+</section>
+    <section class="news pt-5">
+        <div class="container mb-5 mt-3">
+            <div class="d-flex flex-wrap row-cols-1 row-cols-md-3 g-4 news-body">
+                {% for i in notice %}
+                <div class="col pe-5 my-3 ">
+                    <div class="card news-card card-custom">
+                        <div class="card-body pb-1 text-center">
+                            <a href="{{i.notice_title}}" data-bs-toggle="collapse" data-bs-target="#modal{{i.id}}" class="notice_title"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                <span class="pb-2">{{ i.notice_date }}</span>
+                                <h5 class="card-title p-0">{{i.notice_title}}</h5></a>
+                            <div class="collapse " id="modal{{i.id}}">
+                                <div class="card card-body card-custom-no-hover text-card">
+                                    {{i.notice_description}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+<script>
+    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
+    myModal.dispose()
+
+</script>
+{% endblock main_content %}

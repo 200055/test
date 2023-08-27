@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+<title>Menu</title>
+{% endblock title %}
+
+{% block main_content %}
+<section class="top-banner d-flex mt-5 top-banner-img">
+     <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="{% static 'videos/top-banner.mp4' %}" type="video/mp4">
+        </video>
+    <div class="container d-flex justify-content-center align-items-center flex-column text-light">
+       <h4 class="fw-normal">Store</h4>
+        <div class=" text-center ">
+            <p class="a_tag text-light">
+                <a href="/users/profile" class="text-danger text-decoration-none">Home</a> / Store
+            </p>
+        </div>
+    </div>
+</section>
+<section class="text-light text-center">
+    <div class="container">
+        <div class="news-title">
+        </div>
+        <div class="row ">
+            {% for i in categories %}
+            <div class="col-md-12 pt-5">
+                <h1 class=" text-uppercase font-weight-bold">{{i.category_name}}</h1>
+            </div>
+            <div class="col-md-12">
+                <div class="d-flex flex-wrap row-cols-1 row-cols-md-3 g-4 news-body">
+                    {% for j in i.product_set.all %}
+                    <div class="col pe-5">
+                        <div class="card m-3 card-custom">
+                            <img src="/{{j.product_image}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <span class="d-flex justify-content-between"><h5 class="card-title">{{j.product_name}} </h5> <p class="card-text">Rs. {{j.product_price}}</p></span>
+
+                                <a href="/store/add_to_cart/{{i.id}}" class="btn custom-button2 custom-button2-border-light w-100 m-0"
+                                onclick="return confirm('Are you sure want to add this item to cart?')">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock main_content %}

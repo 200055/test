@@ -1,0 +1,86 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load bootstrap %}
+{% block title %}
+    <title>Add New Notice</title>
+{% endblock%}
+
+{% block main_content %}
+<style>
+.form-control:hover{
+    border: 1px solid black;
+}
+.form-control:focus{
+    border: 1px solid #0d6efd;
+    box-shadow: none !important;
+}
+</style>
+
+
+<section class="top-banner d-flex mt-5 top-banner-img">
+     <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="{% static 'videos/top-banner.mp4' %}" type="video/mp4">
+        </video>
+    <div class="container d-flex justify-content-center align-items-center flex-column text-light">
+       <h4 class="fw-normal">Internet Outage</h4>
+        <div class=" text-center ">
+            <p class="a_tag text-light">
+                <a href="/users/profile" class="text-danger text-decoration-none">Home</a> / Internet Outage form
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container py-5 ">
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+          {% include 'messages.html'%}
+        <div class="card py-2 px-2">
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {% for hidden_field in form_notice.hidden_fields %}
+                {{ hidden_field }}
+            {% endfor %}
+
+            {% for field in form_notice.visible_fields %}
+                <div class="form-group">
+                   {{ field.label_tag }}
+                   {% if form_notice.is_bound %}
+                      {% if field.errors %}
+                          {% render_field field class="form-control is-invalid" %}
+                          {% for error in field.errors %}
+                               <div class="invalid-feedback">
+                                    {{ error }}
+                               </div>
+                          {% endfor %}
+                      {% else %}
+                          {% render_field field class="form-control is-valid" %}
+                      {% endif %}
+                   {% else %}
+                      {% render_field field class="form-control" %}
+                   {% endif %}
+                   {% if field.help_text %}
+                     <small class="form-text text-muted">{{ field.help_text }}</small>
+                   {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn custom-button2">Submit</button>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter Notice Title"
+
+    var form_fields1 = document.getElementsByTagName('textarea')
+    form_fields1[0].placeholder = "Enter Description"
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+{% endblock %}

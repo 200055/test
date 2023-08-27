@@ -1,0 +1,170 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block title %}
+<title>PrabNet - Services</title>
+{% endblock title %}
+
+{% block main_content %}
+
+<style>
+    .form-control:hover{
+    border: 1px solid black;
+}
+.form-control:focus{
+    border: 1px solid #0d6efd;
+    box-shadow: none !important;
+}
+.card{border:none;}
+</style>
+<div class="">
+<section id="services">
+        <video class="hidden-xs hidden-sm hidden-md hidden-custom videosize embed-responsive-item" autoplay="autoplay"
+            loop="loop">
+            <source src="{% static 'videos/service-home.mp4' %}" type="video/mp4" />
+        </video>
+
+    </section>
+
+    <!-- Introduction Offers -->
+    <section class="services-table">
+    <div class="container mt-4 pt-5 mb-3 pb-3 pe-5 ps-5 bg-light">
+        {% include 'messages.html'%}
+      <div class="h3">Our Services</div>
+      <div class="table-div  table-responsive-sm">
+        <table class="table table-bordered text-center table-sm">
+          <thead>
+            <tr class="prabnet-bg-color fs-4 text-light">
+              <th scope="col">Plan</th>
+              <th scope="col">1 month</th>
+              <th scope="col">3 month</th>
+              <th scope="col">6 month</th>
+              <th scope="col">12 month</th>
+            </tr>
+          </thead>
+          <tbody>
+            <td scope="row" class="lead fw-normal">699 Mbps</td>
+              <td>999</td>
+              <td>2,999</td>
+              <td>5,999</td>
+              <td>11,999</td>
+            <tr>
+              <td colspan="5" class="lead">One time Set-Up Charge</td>
+            </tr>
+            <tr>
+              <td scope="row" class="lead fw-normal">Installation Charge</td>
+              <td>Free</td>
+              <td>Free</td>
+              <td>Free</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td scope="row" class="lead fw-normal">Drop Wire Charge</td>
+              <td>Free</td>
+              <td>Free</td>
+              <td>Free</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td scope="row" class="lead fw-normal">Single Band Charge</td>
+              <td>2000</td>
+              <td>1500</td>
+              <td>1500</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td scope="row" class="lead fw-normal">Dual Band Charge</td>
+              <td>3000</td>
+              <td>2500</td>
+              <td>2500</td>
+              <td>Free</td>
+            </tr>
+            <tr>
+              <td scope="row" class="lead fw-normal">Refundable deopsit</td>
+              <td>1000</td>
+              <td>1000</td>
+              <td>1000</td>
+              <td>1000</td>
+            </tr>
+             <tr>
+              <td colspan="5">
+              <button type="button" style="width:50%;" class="btn custom-button2 " data-bs-toggle="modal" data-bs-target="#modal-one">
+                  Order
+              </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    </div>
+  </section>
+
+
+  <!-- MODAL  -->
+  <div class="modal fade" area-hidden="true" id="modal-one" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+            <p>Please fill in the information below and we will contact you.</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+    <div class="">
+
+        <div class="card pb-2 px-2">
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {% for hidden_field in form_plan.hidden_fields %}
+                {{ hidden_field }}
+            {% endfor %}
+
+            {% for field in form_plan.visible_fields %}
+                <div class="form-group">
+                   {{ field.label_tag }}
+                   {% if form_plan.is_bound %}
+                      {% if field.errors %}
+                          {% render_field field class="form-control is-invalid" %}
+                          {% for error in field.errors %}
+                               <div class="invalid-feedback">
+                                    {{ error }}
+                               </div>
+                          {% endfor %}
+                      {% else %}
+                          {% render_field field class="form-control is-valid" %}
+                      {% endif %}
+                   {% else %}
+                      {% render_field field class="form-control" %}
+                   {% endif %}
+                   {% if field.help_text %}
+                     <small class="form-text text-muted">{{ field.help_text }}</small>
+                   {% endif %}
+                </div>
+            {% endfor %}
+            <button style="width:100%;!important" type="submit" class="btn m-0 custom-button2">Submit</button>
+        </form>
+    </div>
+    </div>
+</div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Full Name*"
+    form_fields[2].placeholder = "Email address*"
+    form_fields[3].placeholder = "Address*"
+    form_fields[4].placeholder = "Phone*"
+
+    var form_fields1 = document.getElementsByTagName('select')
+    form_fields1[0].placeholder = "Enter Description"
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+
+{% endblock main_content %}

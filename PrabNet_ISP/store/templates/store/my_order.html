@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+<title>MyOrders</title>
+{% endblock title %}
+{% block main_content %}
+<section class="top-banner d-flex mt-5 top-banner-img">
+     <div class="overlay"></div>
+        <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+          <source src="{% static 'videos/top-banner.mp4' %}" type="video/mp4">
+        </video>
+    <div class="container d-flex justify-content-center align-items-center flex-column text-light">
+       <h4 class="fw-normal">Orders</h4>
+        <div class=" text-center ">
+            <p class="a_tag text-light">
+                <a href="/users/profile" class="text-danger text-decoration-none">Home</a> / My Order
+            </p>
+        </div>
+    </div>
+</section>
+<div class="container mt-5" style="min-height:300px;">
+    <div class="row">
+        <div class="col mt-4 mb-4">
+            {% include 'messages.html' %}
+            <div class="card card-custom shadow-lg ">
+                <div class="card-body">
+                    <table class="table text-card table-striped">
+                        <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Item Price</th>
+                            <th>Quantity</th>
+                            <th>Total Price</th>
+                            <th>Ordered Date</th>
+                            <th>Contact No</th>
+                            <th>Delivery Location</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody class="align-items-center text-card">
+                        {% for item in items %}
+                        <tr class="text-card">
+                            <td>{{item.product.product_name}}</td>
+                            <td>Rs.{{item.product.product_price}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>{{item.total_price}}</td>
+                            <td>{{item.created_date}}</td>
+                            <td>{{item.contact_no}}</td>
+                            <td>{{item.contact_address}}</td>
+                            <td>{{item.status}}</td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

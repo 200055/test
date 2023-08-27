@@ -1,0 +1,473 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #101010 !important;
+}
+/* NAV  */
+#nav-logo{
+    height: 50px;
+}
+
+#navhr{
+    border: 0.2px solid gray;
+
+}
+/* HOME PAGE  */
+#navnum{
+    font-family:  Altice, sans-serif !important;
+}
+.six99{
+    color:#1f6db7;
+}
+
+#home{
+    font-family: 'Kaisei Decol', serif;
+    /* background: url(img/home.jpeg) no-repeat right;
+    background-size: cover; */
+    height: 80vh;
+}
+.landing-home {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.landing-home video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100%;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.landing-home .container {
+    position: relative;
+    z-index: 2;
+}
+
+span.help-block{
+    color:red;
+}
+
+.landing-home .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+.top-banner-img{
+    background: url('../images/top-banner.png') no-repeat center;
+    background-size: contain;
+}
+.top-banner{
+    position: relative;
+    background-color: black;
+    height: 20vh;
+    min-height: 15rem;
+    width: 100%;
+    overflow: hidden;
+}
+.top-banner video{
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: 100%;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.top-banner .container {
+    position: relative;
+    z-index: 2;
+}
+.top-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+/* ===================== SPEED ===================== */
+#speed{
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #101010 !important;
+}
+
+.speed-img{
+    background: url('../images/circle-speed.png') no-repeat center;
+    background-size: contain;
+    padding: 50px !important;
+}
+.card-rounded{
+    border-radius: 20px;
+}
+.speed-card{
+    background: #171a1f;
+    box-shadow: 1px 2px 5px -4px white;
+
+}
+
+.month-year{
+    color:red !important;
+}
+/* //////////////////////////////////// */
+
+
+/* Services Page  */
+.services-table{
+    font-family:  Altice, sans-serif !important;
+}
+
+
+/* ///////////////////////////////////////// */
+
+/* OFFER SECTION */
+#offers{
+    background-color: #101010 !important;
+    margin-top: -6px;
+}
+.offer-card{
+    width:20rem;
+    margin-left: -20px;
+}
+.offer-card-title{
+    background:  rgba(110, 109, 117, 0.267);
+    border-radius: 19px 19px 0px 0px;
+    color:#00265e;
+}
+
+@media screen and (max-width:767px){.d-flex>.lqd-column:not([class*=col-xs-]){width:100%}}
+
+/* //////////////////////////////////////// */
+
+/* Contact Us Page  */
+.form-inside{
+    background: #f3f3f3;
+}
+.text-inside{
+    background: #f6f6f6;
+    border-width: 0;
+    width:100%;
+    border-bottom: 2px solid rgb(175, 175, 175);
+    border-radius: 0%;
+    color:gray;
+
+}
+
+.text-inside:focus{
+   transition: 1s;
+   outline: none;
+   box-shadow: 0px 0px 0px 0px gray;
+   background: #f6f6f6;
+   border-bottom: 2px solid black;
+}
+.submit{
+   width: 90% !important;
+
+}
+
+
+/* //////////////////////////////////////// */
+
+/* FOOTER  */
+.footer{
+    margin: 0px;
+    padding:0px;
+
+    background-color: rgb(12 13 16);
+    background-size: cover;
+    width: 100%;
+}
+.footer-bottom{
+    border-top: 1px solid #737e8a;
+
+}
+
+
+/* //////////////////////////////////////////// */
+
+/* UTILITIES */
+.underline--magical {
+
+    background-size: 100% 0.2em;
+    background-position: 0 88%;
+    transition: background-size 0.25s ease-in;
+}
+.underline--magical:hover{
+    background-image: linear-gradient(120deg, #151541 0%, #03157c 100%);
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    background-size: 100% 88%;
+}
+.bg-custom{
+    background-color:rgb(240, 240, 240);
+}
+.bg-card{
+    background-color:black;
+}
+.text-card{
+    color:rgba(255,255,255,.55) !important;
+}
+.card-custom-no-hover{
+    background-color: #29222217 !important;
+}
+.card-custom{
+    background-color: #29222217 !important;
+    transition: 0.5s !important;
+    box-shadow: 0px 0px 21px -7px #283b76 !important;
+}
+.card-custom:hover{
+     box-shadow:0px 0px 24px 1px #283b76 !important;
+}
+.custom-button2-border-light{
+    border: 2px solid rgba(255,255,255,.55) !important;
+    color:rgba(255,255,255,.55) !important;
+}
+.custom-button2-border-light:hover{
+    border: 2px solid rgba(255,255,255,.55)!important;
+    color:white !important;
+}
+
+.text-link{
+    color:rgb(216, 216, 216);
+    transition: ease-out 0.5s;
+}
+.text-link:hover{
+    color:rgb(255, 255, 255);
+}
+.prabnet-color{
+    color: #005a96;
+}
+.prabnet-bg-color{
+    background-color: #005a96;
+}
+
+.gradient-custom{
+    font-size: 60px !important;
+    background: #2B6DCF;
+    background: -webkit-linear-gradient(to right, #979cad 0%, #3756d4 50%, #4176a8 100%) !important;
+    background: -moz-linear-gradient(to right, #979cad 0%, #3756d4 50%, #4176a8 100%) !important;
+    background: linear-gradient(to right, #979cad 0%, #3756d4 50%, #4176a8 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+
+    padding: 0 10px 2px 0;
+    font: 700 60px/1.15;
+    float: left;
+    letter-spacing: -2px;
+}
+
+.test-button{
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: #3e72a3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgb(255 255 255 / 50%),
+    7px 7px 20px 0px rgb(40 59 118),
+    4px 4px 5px 0px rgb(40 59 118);
+    outline: none;
+}
+.test-button-remove{
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: #c61946;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgb(255 255 255 / 50%),
+    7px 0px 20px -15px rgb(0 0 0),
+    4px 4px 12px -1px rgb(241 64 110);
+    outline: none;
+}
+.test-button-remove:hover{
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: #3e72a3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgb(255 255 255 / 50%),
+    7px 7px 20px 0px rgb(40 59 118),
+    4px 4px 5px 0px rgb(40 59 118);
+
+}
+.test-button:hover{
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: #c61946;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgb(255 255 255 / 50%),
+    7px 0px 20px -15px rgb(0 0 0),
+    4px 4px 12px -1px rgb(241 64 110);
+    outline: none;
+}
+
+
+.btn-custom {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: #2B6DCF;
+  background: linear-gradient(0deg, rgb(13, 4, 54) 0%, rgb(0, 6, 61) 100%);
+  }
+.btn-custom:hover {
+    color:#3776d4;
+    background: transparent;
+     box-shadow:none;
+}
+  .btn-custom:before,
+  .btn-custom:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1064e2;
+    box-shadow:
+     -1px -1px 5px 0px rgb(255, 255, 255),
+     7px 7px 20px 0px #0003,
+     4px 4px 5px 0px #0002;
+    transition:400ms ease all;
+  }
+  .btn-custom:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .btn-custom:hover:before,
+  .btn-custom:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+  .videosize {
+    /* position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0; */
+    width: 100%;
+    /* height: 100vh; */
+    object-fit: contain;
+}
+
+/* ////////////////////////////////////// */
+
+
+
+/* MODAL  */
+
+.customer-login, .custom-button1{
+    background: #003d66;
+    background-image: -webkit-linear-gradient(top, #003d66, #047dc9);
+    background-image: -moz-linear-gradient(top, #003d66, #047dc9);
+    background-image: -ms-linear-gradient(top, #003d66, #047dc9);
+    background-image: -o-linear-gradient(top, #003d66, #047dc9);
+    background-image: linear-gradient(to bottom, #003d66, #047dc9);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+
+}
+.customer-login:hover,.custom-button1:hover{
+    background: #2f4449;
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+.custom-button2{
+    margin: 10px;
+    border: 2px solid black;
+    background-color: transparent;
+    color: black;
+    width: 75%;
+    height: 35px;
+    /* border-radius: 20%; */
+    text-transform: uppercase;
+    font-size: 100%;
+    line-height: 1.3;
+    cursor: pointer;
+    /* padding-top: 22px; */
+    transition: all 500ms;
+    background-image: linear-gradient(to bottom, transparent 0%, transparent 50%, rgb(1, 17, 110) 50%, rgb(1, 13, 78) 100%);
+    background-repeat: no-repeat;
+    background-position: 0 0 ;
+    background-size: 100% 180px;
+}
+
+.custom-button2:hover{
+      color: white;
+      background-position: 0 -90px ;
+}
+
+@media (max-width: 992px){
+    #home{
+        /* background: url(img/home.jpeg) no-repeat ; */
+        height: 80vh;
+    }
+    .offer-card{
+        width:100%;
+    }
+
+}

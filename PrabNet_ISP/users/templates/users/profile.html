@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+{% load widget_tweaks %}
+{% load bootstrap %}
+{% block title %}
+<title>Profile</title>
+{% endblock%}
+
+{% block main_content %}
+
+<style>
+.card{
+        background-color: #29222217 !important;
+        transition: 0.5s;
+        box-shadow: 0px 0px 21px -7px #283b76;
+}
+.card:hover{
+    box-shadow:0px 0px 24px 1px #283b76;
+}
+    .profile-ul li a{color:black;
+        border-left: 3px solid transparent}
+
+
+    .profile-ul li a:focus{
+        outline: none !important;
+        border-left: 3px solid blue ;
+        background-color:#ecedf0;
+
+    .profile-ul li a:active{
+        outline: none !important;
+        border-left: 3px solid blue ;
+        background-color:#ecedf0;
+
+    @media (max-width:400px){
+        .profile-ul{padding:555px !important}
+        }
+    }
+
+</style>
+
+<div class="container mb-5 py-5">
+    <div class="row">
+
+        <div class="col">
+            <div class="card-body text-center ">
+                <img src="/{{request.user.profile.profile_pic}}" width="350" class="img-fluid rounded-circle">
+            </div>
+        </div>
+
+
+
+        <div class="col-md-6">
+            <div class="col-12">
+                <div class="card text-card" >
+                    {% include 'messages.html'%}
+                    <h1 class="text-center admin-font">My Profile</h1>
+                    <div class="card-footer">
+                        <div class="py-3">Firstname : {{request.user.profile.first_name}}</div>
+                        <div class="py-3">Lastname : {{request.user.profile.last_name}}</div>
+                        <div class="py-3">Email : {{request.user.profile.email}}</div>
+                        <div class="py-3">My Plan : {{request.user.profile.plan_name}}</div>
+                        <div class="py-3">Phone : {{request.user.profile.phone}}</div>
+                        <div class="py-3">Address : {{request.user.profile.address}}</div>
+                        <div class="py-3">Joined Date : {{request.user.profile.created_date}}</div>
+                    </div>
+                    <div class="view-buttn d-flex">
+                        <a href="/users/update_details" style="width:50%" class="btn custom-button2 custom-button2-border-light">Update Details</a>
+                        <a href="/users/change_user_password" style="width:50%" class="btn custom-button2 custom-button2-border-light">Change Password</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("next").focus();
+</script>
+
+
+{% endblock %}

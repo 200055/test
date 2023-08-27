@@ -1,0 +1,52 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+
+{% block title %}
+<title>Plan Requests</title>
+{% endblock title %}
+
+{% block main_content %}
+<style>
+
+</style>
+
+<div class="pt-5">
+<h2 class="text-light">Plan Requests</h2></div>
+    <div class="container py-3 my-3 mx-auto">
+    {% include 'messages.html' %}
+        <div class="card">
+            <table class="table table-striped">
+                <thead>
+                <tr  class=" table-width">
+                    <th>Name</th>
+                    <th>Email Address</th>
+                    <th class="desc">Address</th>
+                    <th class="desc">Plan</th>
+                    <th class="desc">Number</th>
+                    <th class="action">Actions</th>
+                </tr>
+                </thead>
+                {% for i in plan_request %}
+                <tr>
+                    <td> {{ i.full_name }}</td>
+                    <td> {{ i.email }}</td>
+                    <td> {{ i.address }}</td>
+                    <td> {{ i.plan_name }}</td>
+                    <td> {{ i.number }}</td>
+
+                    <td> &nbsp;
+                        <a class="btn btn-danger btn-sm" href="/admins/delete_plan_request/{{i.id}}"
+                           onclick="return confirm('Are you sure want to delete this message?')" >Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+<script>
+    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
+    myModal.dispose()
+
+</script>
+{% endblock main_content %}

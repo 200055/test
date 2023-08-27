@@ -1,0 +1,92 @@
+{% extends 'layout-admin.html' %}
+{% load static %}
+{% block title %}
+<title>Admin-Dashboard</title>
+{% endblock %}
+{% block main_content %}
+<style>
+    .card-body a{
+        text-decoration:none;
+        color:#fff;
+    }
+
+    .card-body a:hover{
+        color:orange;
+    }
+</style>
+
+<section class="d-flex align-items-center bg-dark text-light p-5 pt-lg-5 text-center text-sm-start other-main mt-3">
+    <div class="container text-center">
+        <div class="ms-auto my-auto">
+            <h1 class="text-light">Admin Dashboard</h1>
+        </div>
+    </div>
+</section>
+
+
+<div class="container m-5 ps-5">
+    {% include 'messages.html' %}
+    <div class="row">
+        <div class="col">
+            <div class="card text-white bg-success mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Users</div>
+                <div class="card-body">
+                    <a href="/admins/users"><h1 class="card-title text-center">{{user}}</h1></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card text-white bg-danger mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Staffs</div>
+                <div class="card-body">
+                    <a href="/admins/staffs"> <h1 class="card-title text-center">{{staffs}}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card text-white bg-primary mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Plan Categories</div>
+                <div class="card-body">
+                    <a href="/internet/get_category">
+                        <h1 class="card-title text-center">{{categories}}</h1></a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-white bg-info mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Products</div>
+                <div class="card-body">
+                    <a href="/store/get_product"><h1 class="card-title text-center">{{products}}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card text-white bg-success mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Plan Requests</div>
+                <div class="card-body">
+                    <a href="/admins/plan_request"><h1 class="card-title text-center">{{plan_request}}</h1></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card text-white bg-danger mb-3" style="max-width: 35rem;">
+                <div class="card-header text-center">Total Feedbacks</div>
+                <div class="card-body">
+                    <a href="/admins/feedback"> <h1 class="card-title text-center">{{feedbacks}}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

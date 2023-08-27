@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+{% load bootstrap %}
+{% load widget_tweaks%}
+{% block title %}
+    <title>Register</title>
+{% endblock%}
+
+{% block main_content %}
+<style>
+input{
+    color:#ff914 !important;
+    background-color: black;
+}
+.card{
+        background-color: #29222217;
+        transition: 0.5s;
+        box-shadow: 0px 0px 21px -7px #283b76;
+}
+
+.card:hover{
+        box-shadow:0px 0px 24px 1px #283b76;
+}
+.control-label{
+    font-size:1.5rem;
+    width:100%;
+    color: #909090;
+}
+
+.form-control{
+    background-color: black !important;
+    margin:auto;
+    color: white !important;
+
+}
+.border-white{
+    border: 1px solid white !important;
+    width: 85%;
+}
+.col-sm-10.col-lg-10 {
+     margin:auto;
+}
+
+</style>
+<div class="container my-5">
+<div class="row">
+
+    <div class="col-md-6 offset-md-3">
+        <h1 class="text-center my-3 text-light">Register</h1>
+          {% include 'messages.html'%}
+        <div class="card py-2 px-2 text-center text-card ">
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {% for hidden_field in form_register.hidden_fields %}
+                {{ hidden_field }}
+            {% endfor %}
+
+            {% for field in form_register.visible_fields %}
+                <div class="form-group">
+                   {{ field.label_tag }}
+                   {% if form_register.is_bound %}
+                      {% if field.errors %}
+                          {% render_field field class="form-control is-invalid" %}
+                          {% for error in field.errors %}
+                               <div class="invalid-feedback">
+                                    {{ error }}
+                               </div>
+                          {% endfor %}
+                      {% else %}
+                          {% render_field field class="form-control is-valid" %}
+                      {% endif %}
+                   {% else %}
+                      {% render_field field class="form-control" %}
+                   {% endif %}
+                   {% if field.help_text %}
+                     <small class="form-text text-muted">{{ field.help_text }}</small>
+                   {% endif %}
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn custom-button2 custom-button2-border-light text-light">Submit</button>
+        </form>
+    </div>
+    </div>
+</div>
+</div>
+<script>
+    var form_fields = document.getElementsByTagName('input')
+    form_fields[1].placeholder = "Enter username"
+    form_fields[2].placeholder = "Enter Email Address"
+    form_fields[3].placeholder = "Enter password"
+    form_fields[4].placeholder = "Confirm password"
+
+   for(field in form_fields){
+   form_fields[field].className += ' my-3'
+   }
+</script>
+
+{% endblock %}
